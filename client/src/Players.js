@@ -8,17 +8,17 @@ const Players = () => {
   const { register, errors, handleSubmit, reset } = useForm({
     mode: "onBlur"
   });
-  const onSubmit = e => {
-      e.preventDefault();
-
+  const onSubmit = data => {
+      console.log(data);
+      updateCountry(data);
   }
   return (
     <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="country">Search by Player Country:</label>
+        {/* <form onSubmit={handleSubmit(onSubmit)}>
+            <label htmlFor="country" ref={register({ required: false })}>Search by Player Country:</label>
             <input id="country" name="country" />
-            <button>Search</button>
-        </form>
+            <input type="submit" />
+        </form> */}
       <h1>Players:</h1>
       <PlayerList country={country} />
     </div>
