@@ -8,9 +8,9 @@ const Players = () => {
   const { register, errors, handleSubmit, reset } = useForm({
     mode: "onBlur"
   });
-  const onSubmit = str => {
-      updateCountry(str);
-      console.log("Country: ", country, str);
+  const onSubmit = e => {
+      e.preventDefault();
+
   }
   return (
     <div>
@@ -22,7 +22,7 @@ const Players = () => {
       <h1>Players:</h1>
       <PlayerList country={country} />
     </div>
-  );
+  )
 };
 
 export default Players;
